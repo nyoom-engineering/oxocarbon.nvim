@@ -20,7 +20,6 @@ use nvim_oxi::{self as oxi, api, opts::*};
 
 #[oxi::module]
 fn oxocarbon() -> oxi::Result<String> {
-    api::set_option("termguicolors", true)?;
 
     // decide pallete based on value of vim background.
     // Each palette consists of 16 base colors, 1 blend color (used for contrast for floating menus and such), and 1 transparent color.
@@ -82,7 +81,7 @@ fn oxocarbon() -> oxi::Result<String> {
         "CursorLine",
         Some(
             &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
+                .fg(oxocarbon[7])
                 .bg(oxocarbon[1])
                 .build(),
         ),
