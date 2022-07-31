@@ -43,6 +43,8 @@ fn oxocarbon() -> oxi::Result<String> {
         _ => panic!("Error: Background not set"),
     };
 
+    api::set_var("terminal_color_background", oxocarbon[0].to_string())?;
+    api::set_var("terminal_color_foreground", oxocarbon[4].to_string())?;
     for x in 0..15 {
         api::set_var("terminal_color_{x}", oxocarbon[x].to_string())?;
     }
@@ -68,6 +70,7 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(CursorLine, 17, 1);
     highlight!(CursorColumn, 17, 1);
     highlight!(CursorLineNr, 4, 17);
+    highlight!(QuickFixLine, 17, 1);
     highlight!(Error, 4, 11);
     highlight!(LineNr, 3, 0);
     highlight!(NonText, 2, 17);
@@ -79,6 +82,9 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(SpecialKey, 3, 17);
     highlight!(Visual, 17, 2);
     highlight!(VisualNOS, 17, 2);
+    highlight!(TooLong, 17, 2);
+    highlight!(Debug, 13, 17);
+    highlight!(Macro, 7, 17);
     api::set_hl(
         0,
         "MatchParen",
@@ -86,6 +92,39 @@ fn oxocarbon() -> oxi::Result<String> {
             &SetHighlightOpts::builder()
                 .fg(oxocarbon[17])
                 .bg(oxocarbon[2])
+                .underline(true)
+                .build(),
+        ),
+    )?;
+    api::set_hl(
+        0,
+        "Bold",
+        Some(
+            &SetHighlightOpts::builder()
+                .fg(oxocarbon[17])
+                .bg(oxocarbon[17])
+                .bold(true)
+                .build(),
+        ),
+    )?;
+    api::set_hl(
+        0,
+        "Italic",
+        Some(
+            &SetHighlightOpts::builder()
+                .fg(oxocarbon[17])
+                .bg(oxocarbon[17])
+                .italic(true)
+                .build(),
+        ),
+    )?;
+    api::set_hl(
+        0,
+        "Underlined",
+        Some(
+            &SetHighlightOpts::builder()
+                .fg(oxocarbon[17])
+                .bg(oxocarbon[17])
                 .underline(true)
                 .build(),
         ),
@@ -161,6 +200,7 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(ModeMsg, 4, 17);
     highlight!(MoreMsg, 8, 17);
     highlight!(Question, 4, 17);
+    highlight!(Substitute, 4, 17);
     highlight!(WarningMsg, 0, 13);
     highlight!(WildMenu, 8, 1);
 
@@ -365,6 +405,7 @@ fn oxocarbon() -> oxi::Result<String> {
 
     // statusline/winbar
     highlight!(StatusLine, 3, 0);
+    highlight!(StatusLineNC, 2, 0);
     highlight!(StatusReplace, 0, 8);
     highlight!(StatusInsert, 0, 12);
     highlight!(StatusVisual, 0, 14);
