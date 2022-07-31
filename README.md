@@ -47,7 +47,7 @@ If you haven't installed cargo/rust before, please get it from your distros pack
 ### Packer.nvim
 
 ```lua
-use {'shaunsigh/oxocarbon.nvim', run = './install.sh'}
+use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
 ```
 
 ### Vim-Plug
