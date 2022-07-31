@@ -19,7 +19,7 @@
 use nvim_oxi::{self as oxi, api, opts::*};
 
 #[oxi::module]
-fn oxocarbon() -> oxi::Result<String> {
+fn oxocarbon() -> oxi::Result<()> {
     api::set_option("termguicolors", true)?;
 
     /*
@@ -64,6 +64,22 @@ fn oxocarbon() -> oxi::Result<String> {
         };
     }
 
+    macro_rules! highlight_with_key {
+        ($hlname:expr, $fgbase:expr, $bgbase:expr, $key:ident) => {
+            api::set_hl(
+                0,
+                stringify!($hlname),
+                Some(
+                    &SetHighlightOpts::builder()
+                        .fg(oxocarbon[$fgbase])
+                        .bg(oxocarbon[$bgbase])
+                        .$key(true)
+                        .build(),
+                ),
+            )?;
+        };
+    }
+
     // editor
     highlight!(ColorColumn, 17, 1);
     highlight!(Cursor, 0, 4);
@@ -85,100 +101,20 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(TooLong, 17, 2);
     highlight!(Debug, 13, 17);
     highlight!(Macro, 7, 17);
-    api::set_hl(
-        0,
-        "MatchParen",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[2])
-                .underline(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "Bold",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "Italic",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[17])
-                .italic(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "Underlined",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[17])
-                .underline(true)
-                .build(),
-        ),
-    )?;
+    highlight_with_key!(MatchParen, 17, 2, underline);
+    highlight_with_key!(Bold, 17, 17, bold);
+    highlight_with_key!(Italic, 17, 17, italic);
+    highlight_with_key!(Underlined, 17, 17, underline);
 
     // diagnostics
     highlight!(DiagnosticWarn, 8, 17);
     highlight!(DiagnosticError, 10, 17);
     highlight!(DiagnosticInfo, 4, 17);
     highlight!(DiagnosticHint, 4, 17);
-    api::set_hl(
-        0,
-        "DiagnosticUnderlineWarn",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[8])
-                .bg(oxocarbon[17])
-                .undercurl(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "DiagnosticUnderlineError",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[10])
-                .bg(oxocarbon[17])
-                .undercurl(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "DiagnosticUnderlineInfo",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[4])
-                .bg(oxocarbon[17])
-                .undercurl(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "DiagnosticUnderlineHint",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[4])
-                .bg(oxocarbon[17])
-                .undercurl(true)
-                .build(),
-        ),
-    )?;
+    highlight_with_key!(DiagnosticUnderlineWarn, 8, 17, undercurl);
+    highlight_with_key!(DiagnosticUnderlineError, 10, 17, undercurl);
+    highlight_with_key!(DiagnosticUnderlineInfo, 4, 17, undercurl);
+    highlight_with_key!(DiagnosticUnderlineHint, 4, 17, undercurl);
 
     // lsp
     highlight!(LspReferenceText, 17, 3);
@@ -295,105 +231,15 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(TSVariable, 4, 17);
     highlight!(TSVariableBuiltin, 4, 17);
     highlight!(TreesitterContext, 17, 1);
-    api::set_hl(
-        0,
-        "TSStrong",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSComment",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[3])
-                .bg(oxocarbon[17])
-                .italic(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSFunction",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[12])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSSymbol",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[15])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSEmphasis",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[10])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSUnderline",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[4])
-                .bg(oxocarbon[17])
-                .underline(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSStrike",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[4])
-                .bg(oxocarbon[17])
-                .strikethrough(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSURI",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[14])
-                .bg(oxocarbon[17])
-                .underline(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "TSCurrentScope",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[17])
-                .bg(oxocarbon[17])
-                .bold(true)
-                .build(),
-        ),
-    )?;
+    highlight_with_key!(TSStrong, 17, 17, bold);
+    highlight_with_key!(TSComment, 3, 17, italic);
+    highlight_with_key!(TSFunction, 12, 17, bold);
+    highlight_with_key!(TSSymbol, 15, 17, bold);
+    highlight_with_key!(TSEmphasis, 10, 17, bold);
+    highlight_with_key!(TSUnderline, 10, 17, underline);
+    highlight_with_key!(TSStrike, 10, 17, strikethrough);
+    highlight_with_key!(TSURI, 14, 17, underline);
+    highlight_with_key!(TSCurrentScope, 17, 17, bold);
 
     // neovim
     highlight!(NvimInternalError, 0, 8);
@@ -410,6 +256,8 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(StatusInsert, 0, 12);
     highlight!(StatusVisual, 0, 14);
     highlight!(StatusTerminal, 0, 11);
+    highlight_with_key!(StatusLineDiagnosticWarn, 14, 0, bold);
+    highlight_with_key!(StatusLineDiagnosticError, 8, 0, bold);
     api::set_hl(
         0,
         "WinBar",
@@ -449,28 +297,6 @@ fn oxocarbon() -> oxi::Result<String> {
                 .fg("#a2a9b0")
                 .bg(oxocarbon[0])
                 .underline(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "StatusLineDiagnosticWarn",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[14])
-                .bg(oxocarbon[0])
-                .bold(true)
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "StatusLineDiagnosticError",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[8])
-                .bg(oxocarbon[0])
-                .bold(true)
                 .build(),
         ),
     )?;
@@ -514,6 +340,7 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(CmpItemKindUnit, 14, 17);
     highlight!(CmpItemKindFunction, 12, 17);
     highlight!(CmpItemKindMethod, 7, 17);
+    highlight_with_key!(CmpItemAbbrMatch, 5, 17, bold);
     api::set_hl(
         0,
         "CmpItemAbbr",
@@ -521,17 +348,6 @@ fn oxocarbon() -> oxi::Result<String> {
             &SetHighlightOpts::builder()
                 .fg("#adadad")
                 .bg(oxocarbon[17])
-                .build(),
-        ),
-    )?;
-    api::set_hl(
-        0,
-        "CmpItemAbbrMatch",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg(oxocarbon[5])
-                .bg(oxocarbon[17])
-                .bold(true)
                 .build(),
         ),
     )?;
@@ -571,5 +387,5 @@ fn oxocarbon() -> oxi::Result<String> {
     highlight!(HydraPink, 14, 17);
     highlight!(HydraHint, 17, 16);
 
-    Ok("Oxocarbon Loaded".to_string())
+    Ok(())
 }
