@@ -29,6 +29,7 @@ fn oxocarbon() -> oxi::Result<()> {
       - 1 blend color (used for contrast for floating menus and such),
       - 1 transparent color (used for well, transparency)
     */
+
     let oxocarbon: [&str; 18] = match api::get_option::<String>("background").unwrap().as_str() {
         "dark" => [
             "#161616", "#262626", "#393939", "#525252", "#dde1e6", "#f2f4f8", "#ffffff", "#08bdba",
@@ -62,9 +63,6 @@ fn oxocarbon() -> oxi::Result<()> {
                 ),
             )?;
         };
-    }
-
-    macro_rules! highlight_with_key {
         ($hlname:expr, $fgbase:expr, $bgbase:expr, $key:ident) => {
             api::set_hl(
                 0,
@@ -101,20 +99,20 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(TooLong, 17, 2);
     highlight!(Debug, 13, 17);
     highlight!(Macro, 7, 17);
-    highlight_with_key!(MatchParen, 17, 2, underline);
-    highlight_with_key!(Bold, 17, 17, bold);
-    highlight_with_key!(Italic, 17, 17, italic);
-    highlight_with_key!(Underlined, 17, 17, underline);
+    highlight!(MatchParen, 17, 2, underline);
+    highlight!(Bold, 17, 17, bold);
+    highlight!(Italic, 17, 17, italic);
+    highlight!(Underlined, 17, 17, underline);
 
     // diagnostics
     highlight!(DiagnosticWarn, 8, 17);
     highlight!(DiagnosticError, 10, 17);
     highlight!(DiagnosticInfo, 4, 17);
     highlight!(DiagnosticHint, 4, 17);
-    highlight_with_key!(DiagnosticUnderlineWarn, 8, 17, undercurl);
-    highlight_with_key!(DiagnosticUnderlineError, 10, 17, undercurl);
-    highlight_with_key!(DiagnosticUnderlineInfo, 4, 17, undercurl);
-    highlight_with_key!(DiagnosticUnderlineHint, 4, 17, undercurl);
+    highlight!(DiagnosticUnderlineWarn, 8, 17, undercurl);
+    highlight!(DiagnosticUnderlineError, 10, 17, undercurl);
+    highlight!(DiagnosticUnderlineInfo, 4, 17, undercurl);
+    highlight!(DiagnosticUnderlineHint, 4, 17, undercurl);
 
     // lsp
     highlight!(LspReferenceText, 17, 3);
@@ -231,15 +229,15 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(TSVariable, 4, 17);
     highlight!(TSVariableBuiltin, 4, 17);
     highlight!(TreesitterContext, 17, 1);
-    highlight_with_key!(TSStrong, 17, 17, bold);
-    highlight_with_key!(TSComment, 3, 17, italic);
-    highlight_with_key!(TSFunction, 12, 17, bold);
-    highlight_with_key!(TSSymbol, 15, 17, bold);
-    highlight_with_key!(TSEmphasis, 10, 17, bold);
-    highlight_with_key!(TSUnderline, 10, 17, underline);
-    highlight_with_key!(TSStrike, 10, 17, strikethrough);
-    highlight_with_key!(TSURI, 14, 17, underline);
-    highlight_with_key!(TSCurrentScope, 17, 17, bold);
+    highlight!(TSStrong, 17, 17, bold);
+    highlight!(TSComment, 3, 17, italic);
+    highlight!(TSFunction, 12, 17, bold);
+    highlight!(TSSymbol, 15, 17, bold);
+    highlight!(TSEmphasis, 10, 17, bold);
+    highlight!(TSUnderline, 10, 17, underline);
+    highlight!(TSStrike, 10, 17, strikethrough);
+    highlight!(TSURI, 14, 17, underline);
+    highlight!(TSCurrentScope, 17, 17, bold);
 
     // neovim
     highlight!(NvimInternalError, 0, 8);
@@ -256,8 +254,8 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(StatusInsert, 0, 12);
     highlight!(StatusVisual, 0, 14);
     highlight!(StatusTerminal, 0, 11);
-    highlight_with_key!(StatusLineDiagnosticWarn, 14, 0, bold);
-    highlight_with_key!(StatusLineDiagnosticError, 8, 0, bold);
+    highlight!(StatusLineDiagnosticWarn, 14, 0, bold);
+    highlight!(StatusLineDiagnosticError, 8, 0, bold);
     api::set_hl(
         0,
         "WinBar",
@@ -340,7 +338,7 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(CmpItemKindUnit, 14, 17);
     highlight!(CmpItemKindFunction, 12, 17);
     highlight!(CmpItemKindMethod, 7, 17);
-    highlight_with_key!(CmpItemAbbrMatch, 5, 17, bold);
+    highlight!(CmpItemAbbrMatch, 5, 17, bold);
     api::set_hl(
         0,
         "CmpItemAbbr",
