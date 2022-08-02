@@ -385,5 +385,11 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(HydraPink, 14, 17);
     highlight!(HydraHint, 17, 16);
 
+    // dashboard
+    highlight!(DashboardShortCut, 10, 17);
+    highlight!(DashboardHeader, 15, 17);
+    highlight!(DashboardCenter, 14, 17);
+    highlight!(DashboardFooter, 8, 17);
+
     Ok(())
 }
