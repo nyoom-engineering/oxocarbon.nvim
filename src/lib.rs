@@ -46,8 +46,8 @@ fn oxocarbon() -> oxi::Result<()> {
 
     api::set_var("terminal_color_background", oxocarbon[0].to_string())?;
     api::set_var("terminal_color_foreground", oxocarbon[4].to_string())?;
-    for x in 0..15 {
-        api::set_var("terminal_color_{x}", oxocarbon[x].to_string())?;
+    for item in oxocarbon.iter().take(15) {
+        api::set_var("terminal_color_{x}", *item)?;
     }
 
     macro_rules! highlight {
