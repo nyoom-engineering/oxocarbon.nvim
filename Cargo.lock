@@ -89,7 +89,8 @@ checksum = "8371e4e5341c3a96db127eb2465ac681ced4c433e01dd0e938adbef26ba93ba5"
 [[package]]
 name = "nvim-oxi"
 version = "0.1.3"
-source = "git+https://github.com/noib3/nvim-oxi.git#425e63db344655cb5f58d68579719736e228f245"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "899991923a1eb342f025e64a242965292f7777927e0db11e3fa4b1839af0dcd4"
 dependencies = [
  "derive_builder",
  "libc",
@@ -104,7 +105,8 @@ dependencies = [
 [[package]]
 name = "nvim-types"
 version = "0.1.1"
-source = "git+https://github.com/noib3/nvim-oxi.git#425e63db344655cb5f58d68579719736e228f245"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "534f4dc1f66e13397d4772c7f15c683580a372ef57ebed50a60420bced4d43b8"
 dependencies = [
  "libc",
  "serde",
@@ -120,7 +122,8 @@ checksum = "2f7254b99e31cad77da24b08ebf628882739a608578bb1bcdfc1f9c21260d7c0"
 [[package]]
 name = "oxi-module"
 version = "0.1.0"
-source = "git+https://github.com/noib3/nvim-oxi.git#425e63db344655cb5f58d68579719736e228f245"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "924fe848ee5ac190fce77de453c152fa0c4ce34a41231c055c48e05a8fd88e7c"
 dependencies = [
  "proc-macro2",
  "quote",

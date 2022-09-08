@@ -46,8 +46,8 @@ fn oxocarbon() -> oxi::Result<()> {
 
     api::set_var("terminal_color_background", oxocarbon[0].to_string())?;
     api::set_var("terminal_color_foreground", oxocarbon[4].to_string())?;
-    for x in 0..15 {
-        api::set_var("terminal_color_{x}", oxocarbon[x].to_string())?;
+    for item in oxocarbon.iter().take(15) {
+        api::set_var("terminal_color_{x}", *item)?;
     }
 
     macro_rules! highlight {
@@ -57,8 +57,8 @@ fn oxocarbon() -> oxi::Result<()> {
                 stringify!($hlname),
                 Some(
                     &SetHighlightOpts::builder()
-                        .foreground(oxocarbon[$fgbase])
-                        .background(oxocarbon[$bgbase])
+                        .fg(oxocarbon[$fgbase])
+                        .bg(oxocarbon[$bgbase])
                         .build(),
                 ),
             )?;
@@ -69,8 +69,8 @@ fn oxocarbon() -> oxi::Result<()> {
                 stringify!($hlname),
                 Some(
                     &SetHighlightOpts::builder()
-                        .foreground(oxocarbon[$fgbase])
-                        .background(oxocarbon[$bgbase])
+                        .fg(oxocarbon[$fgbase])
+                        .bg(oxocarbon[$bgbase])
                         .$key(true)
                         .build(),
                 ),
@@ -261,8 +261,8 @@ fn oxocarbon() -> oxi::Result<()> {
         "WinBar",
         Some(
             &SetHighlightOpts::builder()
-                .foreground("#a2a9b0")
-                .background(oxocarbon[0])
+                .fg("#a2a9b0")
+                .bg(oxocarbon[0])
                 .build(),
         ),
     )?;
@@ -271,8 +271,8 @@ fn oxocarbon() -> oxi::Result<()> {
         "StatusPosition",
         Some(
             &SetHighlightOpts::builder()
-                .foreground("#a2a9b0")
-                .background(oxocarbon[0])
+                .fg("#a2a9b0")
+                .bg(oxocarbon[0])
                 .build(),
         ),
     )?;
@@ -281,8 +281,8 @@ fn oxocarbon() -> oxi::Result<()> {
         "StatusNormal",
         Some(
             &SetHighlightOpts::builder()
-                .foreground("#a2a9b0")
-                .background(oxocarbon[0])
+                .fg("#a2a9b0")
+                .bg(oxocarbon[0])
                 .underline(true)
                 .build(),
         ),
@@ -292,8 +292,8 @@ fn oxocarbon() -> oxi::Result<()> {
         "StatusCommand",
         Some(
             &SetHighlightOpts::builder()
-                .foreground("#a2a9b0")
-                .background(oxocarbon[0])
+                .fg("#a2a9b0")
+                .bg(oxocarbon[0])
                 .underline(true)
                 .build(),
         ),
@@ -344,8 +344,8 @@ fn oxocarbon() -> oxi::Result<()> {
         "CmpItemAbbr",
         Some(
             &SetHighlightOpts::builder()
-                .foreground("#adadad")
-                .background(oxocarbon[17])
+                .fg("#adadad")
+                .bg(oxocarbon[17])
                 .build(),
         ),
     )?;
