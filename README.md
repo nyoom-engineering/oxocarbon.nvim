@@ -1,6 +1,6 @@
 # oxocarbon.nvim
 
-A dark and light Neovim theme written in Rust, inspired by [IBM Carbon](https://carbondesignsystem.com/guidelines/color/overview/#themes).
+A dark and light Neovim theme written in fennel, inspired by [IBM Carbon](https://carbondesignsystem.com/guidelines/color/overview/#themes).
 
 The color palette expands on Nyoom's unique aesthetic and represents a contemporary and ever-changing IBM. Balancing mankind and machine, the colors are harmonious with nature, yet chosen for their luminous quality in the digital world. The oxocarbon color palette is a subset of the broader IBM palette. 
 
@@ -18,7 +18,6 @@ The resulting palette is a set of colors that portrays a singular IBM. Of the wo
 - Support for popular plugins, such as Lsp, Treesitter, and Semantic Highlighting
 - Fast and Featureful. Supports all the highlights you'll ever need without making a dent on startuptime
 - Uses `Termguicolors` but its compatible with 16-color terminals as well
-- Written in rust (writing it in rust doesn't really do anything, other than maybe a miniscule startuptime improvement, its just for fun!)
 
 ### Plugin support
 
@@ -38,22 +37,12 @@ And many others should "just work!" If you have a plugin that needs explicit hig
 
 ## Install
 
-The colorscheme requires the latest stable or nightly neovim (> `v0.7.0`) as well as a working installation of `cargo`. 
-
-If you haven't installed cargo/rust before, please get it from your distros package manager or https://rustup.rs
-
-`./install.sh` will build the colorscheme and place the compiled library in your runtimepath.
+The colorscheme requires the latest stable or nightly neovim (> `v0.7.0`)
 
 ### Packer.nvim
 
 ```lua
-use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
-```
-
-### Vim-Plug
-
-```vimscript
-Plug 'shaunsingh/oxocarbon.nvim', { 'do': './install.sh' }
+use {'shaunsingh/oxocarbon.nvim', branch = 'fennel'}
 ```
 
 ### Usage 
@@ -73,16 +62,6 @@ For nyoom.nvim users:
 (import-macros {: colorscheme} :macros.highlight-macros)
 (colorscheme oxocarbon)
 ```
-
-### Configuration
-
-Currently the only configuration is if you want to use the dark or the light theme. This is determined by the value of the `background` option. 
-```lua
-vim.o.background = "dark" -- triggers dark colorscheme
-vim.o.background = "light" -- triggers light colorscheme
-```
-
-To modify highlights, please use `:h nvim_set_hl`
 
 ## License 
 
