@@ -1,7 +1,6 @@
 /*
                              O X O C A R B O N
-       _..._         _..._         _..._         _..._         _..._
-     .:::::::.     .::::. `.     .::::  `.     .::'   `.     .'     `.
+       _..._         _..._         _..._         _..._         _..._ .:::::::.     .::::. `.     .::::  `.     .::'   `.     .'     `.
     :::::::::::   :::::::.  :   ::::::    :   :::       :   :         :
     :::::::::::   ::::::::  :   ::::::    :   :::       :   :         :
     `:::::::::'   `::::::' .'   `:::::   .'   `::.     .'   `.       .'
@@ -32,9 +31,24 @@ fn oxocarbon() -> oxi::Result<()> {
 
     let oxocarbon: [&str; 18] = match api::get_option::<String>("background").unwrap().as_str() {
         "dark" => [
-            "#161616", "#262626", "#393939", "#525252", "#dde1e6", "#f2f4f8", "#ffffff", "#08bdba",
-            "#3ddbd9", "#78a9ff", "#ee5396", "#33b1ff", "#ff7eb6", "#42be65", "#be95ff", "#82cfff",
-            "#131313", "",
+            "#161616", // 0, dark grey
+            "#262626", // 1, dark grey (lighter)
+            "#393939", // 2, light grey
+            "#525252", // 3, lighter grey
+            "#dde1e6", // 4, almost white
+            "#f2f4f8", // 5, white
+            "#ffffff", // 6, true white
+            "#08bdba", // 7, teal
+            "#3ddbd9", // 8, lighter teal
+            "#78a9ff", // 9, blue / light purple
+            "#ee5396", // 10, hot pink
+            "#33b1ff", // 11, sky blue
+            "#ff7eb6", // 12, lightpink
+            "#42be65", // 13, green
+            "#be95ff", // 14, purple
+            "#82cfff", // 15 light blue
+            "#131313", // 16 dark grey
+            "",        // 17
         ],
         "light" => [
             "#FFFFFF", "#FAFAFA", "#ECEFF1", "#161616", "#37474F", "#90A4AE", "#525252", "#08bdba",
@@ -126,7 +140,7 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(SignColumn, 1, 0);
 
     // navigation
-    highlight!(Directory, 8, 17);
+    highlight!(Directory, 10, 17);
 
     // prompts
     highlight!(EndOfBuffer, 1, 17);
@@ -163,10 +177,10 @@ fn oxocarbon() -> oxi::Result<()> {
     highlight!(Delimeter, 6, 17);
     highlight!(Exception, 9, 17);
     highlight!(Float, 15, 17);
-    highlight!(Function, 8, 17);
+    highlight!(Function, 12, 17);
     highlight!(Identifier, 4, 17);
     highlight!(Include, 9, 17);
-    highlight!(Keyword, 9, 17);
+    highlight!(Keyword, 7, 17); // updated
     highlight!(Label, 9, 17);
     highlight!(Number, 15, 17);
     highlight!(Operator, 9, 17);
