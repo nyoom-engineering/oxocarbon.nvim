@@ -1,12 +1,15 @@
+(fn str? [s]
+  (= (type s) :string))
+
 (λ let-with-scope! [[scope] name value]
   (assert-compile (or (str? scope) (sym? scope)) "expected string or symbol for scope" scope)
-  (assert-compile (or (= :b (->str scope))
-                      (= :w (->str scope))
-                      (= :t (->str scope))
-                      (= :g (->str scope))) "expected scope to be either b, w, t or g" scope)
+  (assert-compile (or (= :b (tostring scope))
+                      (= :w (tostring scope))
+                      (= :t (tostring scope))
+                      (= :g (tostring scope))) "expected scope to be either b, w, t or g" scope)
   (assert-compile (or (str? name) (sym? name)) "expected string or symbol for name" name)
-  (let [name (->str name)
-        scope (->str scope)]
+  (let [name (tostring name)
+        scope (tostring scope)]
     `(tset ,(match scope
               :b 'vim.b
               :w 'vim.w
@@ -32,7 +35,7 @@
   ```"
    (match [...]
      [[scope] name value] (let-with-scope! [scope] name value)
-     [name value] (let-global! name value)
+     [name value] (let-with-scope! [:g] name value)
      _ (error "expected let! to have at least two arguments: name value")))
 
 (λ custom-set-face! [name attributes colors]
@@ -67,12 +70,12 @@
                                     :bold true})
   ```"
   (assert-compile (sym? name) "expected symbol for name" name)
-  (assert-compile (tbl? attributes) "expected table for attributes" attributes)
-  (assert-compile (tbl? colors) "expected colors for colors" colors)
-  (let [name (->str name)
+  (assert-compile (table? attributes) "expected table for attributes" attributes)
+  (assert-compile (table? colors) "expected colors for colors" colors)
+  (let [name (tostring name)
         definition (collect [_ attr (ipairs attributes)
                              :into colors]
-                     (->str attr) true)]
+                     (tostring attr) true)]
     `(vim.api.nvim_set_hl 0 ,name ,definition)))
 
 {: let!
