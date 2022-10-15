@@ -1,3 +1,3 @@
 if has("nvim")
-  lua require("oxocarbon.main").init()
+  lua require("oxocarbon")
 endif

@@ -1,5 +1,5 @@
 local _2afile_2a = "fnl/oxocarbon/init.fnl"
-local _local_1_ = require("colorutils")
+local _local_1_ = require("oxocarbon.colorutils")
 local blend_hex = _local_1_["blend-hex"]
 local base00 = "#161616"
 local base06 = "#ffffff"

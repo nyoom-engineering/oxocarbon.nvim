@@ -10,8 +10,8 @@
 ;;   Description:         Neovim Colorschemes based on base16 in fennel made with (hs)luv <3 
 ;;   Author:              https://github.com/shaunsingh
 
-(import-macros {: custom-set-face! : let!} :macros)
-(local {: blend-hex} (require :colorutils))
+(import-macros {: custom-set-face! : let!} :oxocarbon.macros)
+(local {: blend-hex} (require :oxocarbon.colorutils))
 
 ;; carbon palette 
 ;; (nyoom-module-p! nyoom.+carbon
