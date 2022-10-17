@@ -16,8 +16,8 @@
 
 */
 
-use nvim_oxi::{self as oxi, api, opts::*};
-
+use nvim_oxi::api::opts::SetHighlightOpts;
+use nvim_oxi::{self as oxi, api};
 #[oxi::module]
 fn oxocarbon() -> oxi::Result<()> {
     api::set_option("termguicolors", true)?;
@@ -55,25 +55,21 @@ fn oxocarbon() -> oxi::Result<()> {
             api::set_hl(
                 0,
                 stringify!($hlname),
-                Some(
-                    &SetHighlightOpts::builder()
-                        .fg(oxocarbon[$fgbase])
-                        .bg(oxocarbon[$bgbase])
-                        .build(),
-                ),
+                &SetHighlightOpts::builder()
+                    .foreground(oxocarbon[$fgbase])
+                    .background(oxocarbon[$bgbase])
+                    .build(),
             )?;
         };
         ($hlname:expr, $fgbase:expr, $bgbase:expr, $key:ident) => {
             api::set_hl(
                 0,
                 stringify!($hlname),
-                Some(
-                    &SetHighlightOpts::builder()
-                        .fg(oxocarbon[$fgbase])
-                        .bg(oxocarbon[$bgbase])
-                        .$key(true)
-                        .build(),
-                ),
+                &SetHighlightOpts::builder()
+                    .foreground(oxocarbon[$fgbase])
+                    .background(oxocarbon[$bgbase])
+                    .$key(true)
+                    .build(),
             )?;
         };
     }
@@ -259,44 +255,36 @@ fn oxocarbon() -> oxi::Result<()> {
     api::set_hl(
         0,
         "WinBar",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg("#a2a9b0")
-                .bg(oxocarbon[0])
-                .build(),
-        ),
+        &SetHighlightOpts::builder()
+            .foreground("#a2a9b0")
+            .background(oxocarbon[0])
+            .build(),
     )?;
     api::set_hl(
         0,
         "StatusPosition",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg("#a2a9b0")
-                .bg(oxocarbon[0])
-                .build(),
-        ),
+        &SetHighlightOpts::builder()
+            .foreground("#a2a9b0")
+            .background(oxocarbon[0])
+            .build(),
     )?;
     api::set_hl(
         0,
         "StatusNormal",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg("#a2a9b0")
-                .bg(oxocarbon[0])
-                .underline(true)
-                .build(),
-        ),
+        &SetHighlightOpts::builder()
+            .foreground("#a2a9b0")
+            .background(oxocarbon[0])
+            .underline(true)
+            .build(),
     )?;
     api::set_hl(
         0,
         "StatusCommand",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg("#a2a9b0")
-                .bg(oxocarbon[0])
-                .underline(true)
-                .build(),
-        ),
+        &SetHighlightOpts::builder()
+            .foreground("#a2a9b0")
+            .background(oxocarbon[0])
+            .underline(true)
+            .build(),
     )?;
 
     // telescope
@@ -342,12 +330,10 @@ fn oxocarbon() -> oxi::Result<()> {
     api::set_hl(
         0,
         "CmpItemAbbr",
-        Some(
-            &SetHighlightOpts::builder()
-                .fg("#adadad")
-                .bg(oxocarbon[17])
-                .build(),
-        ),
+        &SetHighlightOpts::builder()
+            .foreground("#adadad")
+            .background(oxocarbon[17])
+            .build(),
     )?;
 
     // nvimtree

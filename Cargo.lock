@@ -81,34 +81,50 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 
 [[package]]
-name = "libc"
-version = "0.2.134"
+name = "luajit-bindings"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "329c933548736bc49fd575ee68c89e8be4d260064184389a5b77517cddd99ffb"
+checksum = "c74005abc71db092ff645cdf3afdc5447fcccab3193e72a10e5dce2da84c3d21"
+dependencies = [
+ "once_cell",
+ "thiserror",
+]
 
 [[package]]
-name = "nvim-oxi"
-version = "0.1.3"
+name = "nvim-api"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "899991923a1eb342f025e64a242965292f7777927e0db11e3fa4b1839af0dcd4"
+checksum = "9c3f5770d973f41bb65a816163326131db29d861c96e895daba553e987bacd8f"
 dependencies = [
  "derive_builder",
- "libc",
+ "luajit-bindings",
  "nvim-types",
- "once_cell",
- "oxi-module",
  "serde",
  "serde_repr",
  "thiserror",
 ]
 
 [[package]]
-name = "nvim-types"
-version = "0.1.1"
+name = "nvim-oxi"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "534f4dc1f66e13397d4772c7f15c683580a372ef57ebed50a60420bced4d43b8"
+checksum = "a5ce3af07cfe35f4cdbd82c590ebed5b8b9d167657b75e63836ba57e5d2d44fd"
 dependencies = [
- "libc",
+ "luajit-bindings",
+ "nvim-api",
+ "nvim-types",
+ "oxi-module",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
+name = "nvim-types"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "32097b418c307b75730d49f8e446dc54dac28d05eafc300b835128baf7fc1042"
+dependencies = [
+ "luajit-bindings",
  "serde",
  "thiserror",
 ]
@@ -121,9 +137,9 @@ checksum = "e82dad04139b71a90c080c8463fe0dc7902db5192d939bd0950f074d014339e1"
 
 [[package]]
 name = "oxi-module"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "924fe848ee5ac190fce77de453c152fa0c4ce34a41231c055c48e05a8fd88e7c"
+checksum = "6b9dc207b6986f418207799dbc61b12990f1dfa6bbbbee3d83cd0119d55f6033"
 dependencies = [
  "proc-macro2",
  "quote",
