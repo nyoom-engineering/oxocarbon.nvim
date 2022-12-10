@@ -2,7 +2,9 @@
 
 **Note:** The old rust version can be found on the `rust` branch of this repository
 
-A dark and light Neovim theme written in fennel, inspired by [IBM Carbon](https://carbondesignsystem.com/guidelines/color/overview/#themes).
+**Oxocarbon is looking for ports!** If you're a user of another editor or tool, join our discord to learn more about porting oxocarbon to other applications. https://discord.gg/5R5DvQs9
+
+A dark and light Neovim theme written in fennel, inspired by [IBM Carbon](https://carbondesignsystem.com/guidelines/color/overview/#themes). This is the reference implementation of the oxocarbon theme. 
 
 The color palette expands on Nyoom's unique aesthetic and represents a contemporary and ever-changing IBM. Balancing mankind and machine, the colors are harmonious with nature, yet chosen for their luminous quality in the digital world. The oxocarbon color palette is a subset of the broader IBM palette.
 
