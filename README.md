@@ -44,7 +44,7 @@ The colorscheme requires the latest stable or nightly neovim (> `v0.7.0`)
 ### Packer.nvim
 
 ```lua
-use {'shaunsingh/oxocarbon.nvim'}
+use {'nyoom-engineering/oxocarbon.nvim'}
 ```
 
 ### Usage
