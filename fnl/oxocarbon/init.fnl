@@ -11,21 +11,10 @@
 ;;   Author:              https://github.com/shaunsingh
 
 (local {: blend-hex} (require :oxocarbon.colorutils))
-
 ;; utilities
 
 (macro let! [...]
   (fn let-with-scope! [[scope] name value]
-    (fn str? [s]
-      (= (type s) :string))
-
-    (assert-compile (or (str? scope) (sym? scope))
-                    "expected string or symbol for scope" scope)
-    (assert-compile (or (= :b (tostring scope)) (= :w (tostring scope))
-                        (= :t (tostring scope)) (= :g (tostring scope)))
-                    "expected scope to be either b, w, t or g" scope)
-    (assert-compile (or (str? name) (sym? name))
-                    "expected string or symbol for name" name)
     (let [name (tostring name)
           scope (tostring scope)]
       `(tset ,(match scope
@@ -40,9 +29,6 @@
     _ (error "expected let! to have at least two arguments: name value")))
 
 (macro set! [name ?value]
-  (fn ->str [x]
-    (tostring x))
-
   (fn ->bool [x]
     (if x true false))
 
@@ -55,11 +41,8 @@
   (fn begins-with? [chars str]
     (->bool (str:match (.. "^" chars))))
 
-  (fn first [xs]
-    (. xs 1))
-
   (fn quoted? [x]
-    (and (list? x) (= `quote (first x))))
+    (and (list? x) (= `quote (. x 1))))
 
   (fn quoted->fn [expr]
     (fn second [xs]
@@ -85,16 +68,15 @@
 
   (fn vlua [x]
     (assert-compile (sym? x) "expected symbol for x" x)
-    (string.format "v:lua.%s()" (->str x)))
+    (string.format "v:lua.%s()" (tostring x)))
 
   (fn expand-exprs [exprs]
     (if (> (length exprs) 1)
         `(do
            ,(unpack exprs))
-        (first exprs)))
+        (. exprs 1)))
 
-  (assert-compile (sym? name) "expected symbol for name" name)
-  (let [name (->str name)
+  (let [name (tostring name)
         value (if (nil? ?value)
                   (not (begins-with? :no name))
                   ?value)
@@ -105,8 +87,8 @@
                  (name:match "^no(.+)$")
                  name)
         exprs (if (fn? value) [`(tset _G
-                                      ,(->str (gensym-checksum value
-                                                               {:prefix "__"}))
+                                      ,(tostring (gensym-checksum value
+                                                                  {:prefix "__"}))
                                       ,value)] [])
         value (if (fn? value)
                   (vlua (gensym-checksum value {:prefix "__"}))
@@ -123,28 +105,13 @@
     (expand-exprs exprs)))
 
 (macro colorscheme [scheme]
-  (fn ->str [x]
-    (tostring x))
-
   (assert-compile (sym? scheme) "expected symbol for name" scheme)
-  (let [scheme (->str scheme)]
+  (let [scheme (tostring scheme)]
     `(vim.api.nvim_cmd {:cmd :colorscheme :args [,scheme]} {})))
 
 (macro custom-set-face! [name attributes colors]
-  (fn tbl? [x]
-    (= :table (type x)))
-
-  (fn str? [s]
-    (= (type s) :string))
-
-  (fn ->str [x]
-    (tostring x))
-
-  (assert-compile (str? name) "expected string for name" name)
-  (assert-compile (tbl? attributes) "expected table for attributes" attributes)
-  (assert-compile (tbl? colors) "expected colors for colors" colors)
   (let [definition (collect [_ attr (ipairs attributes) &into colors]
-                     (->str attr)
+                     (tostring attr)
                      true)]
     `(vim.api.nvim_set_hl 0 ,name ,definition)))
 
@@ -157,7 +124,6 @@
 
 (let! colors_name :oxocarbon)
 (set! termguicolors true)
-
 ;; oxocarbon palette 
 
 (local base00 "#161616")
@@ -220,7 +186,6 @@
 (let! terminal_color_13 oxocarbon.base15)
 (let! terminal_color_14 oxocarbon.base07)
 (let! terminal_color_15 oxocarbon.base06)
-
 ;; editor
 
 (custom-set-face! :ColorColumn [] {:fg oxocarbon.none :bg oxocarbon.base01})
@@ -291,11 +256,9 @@
 (custom-set-face! :Folded [] {:fg oxocarbon.base02 :bg oxocarbon.base01})
 (custom-set-face! :FoldColumn [] {:fg oxocarbon.base01 :bg oxocarbon.base00})
 (custom-set-face! :SignColumn [] {:fg oxocarbon.base01 :bg oxocarbon.base00})
-
 ;; navigation
 
 (custom-set-face! :Directory [] {:fg oxocarbon.base08 :bg oxocarbon.none})
-
 ;; prompts
 
 (custom-set-face! :EndOfBuffer [] {:fg oxocarbon.base01 :bg oxocarbon.none})
@@ -306,7 +269,6 @@
 (custom-set-face! :Substitute [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 (custom-set-face! :WarningMsg [] {:fg oxocarbon.base13 :bg oxocarbon.none})
 (custom-set-face! :WildMenu [] {:fg oxocarbon.base08 :bg oxocarbon.base01})
-
 ;; vimhelp
 
 (custom-set-face! :helpHyperTextJump []
@@ -315,7 +277,6 @@
 (custom-set-face! :helpSpecial [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 (custom-set-face! :helpHeadline [] {:fg oxocarbon.base10 :bg oxocarbon.none})
 (custom-set-face! :helpHeader [] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;; diff
 
 (custom-set-face! :DiffAdded [] {:fg oxocarbon.base07 :bg oxocarbon.none})
@@ -325,23 +286,19 @@
 (custom-set-face! :DiffChange [] {:bg "#222a39" :fg oxocarbon.none})
 (custom-set-face! :DiffText [] {:bg "#2f3f5c" :fg oxocarbon.none})
 (custom-set-face! :DiffDelete [] {:bg "#361c28" :fg oxocarbon.none})
-
 ;; search
 
 (custom-set-face! :IncSearch [] {:fg oxocarbon.base06 :bg oxocarbon.base10})
 (custom-set-face! :Search [] {:fg oxocarbon.base01 :bg oxocarbon.base08})
-
 ;; tabs
 
 (custom-set-face! :TabLine [] {:fg oxocarbon.base04 :bg oxocarbon.base01})
 (custom-set-face! :TabLineFill [] {:fg oxocarbon.base04 :bg oxocarbon.base01})
 (custom-set-face! :TabLineSel [] {:fg oxocarbon.base08 :bg oxocarbon.base03})
-
 ;; window
 
 (custom-set-face! :Title [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 (custom-set-face! :VertSplit [] {:fg oxocarbon.base01 :bg oxocarbon.base00})
-
 ;; regular syntax
 
 (custom-set-face! :Boolean [] {:fg oxocarbon.base09 :bg oxocarbon.none})
@@ -375,6 +332,7 @@
 (custom-set-face! :Todo [] {:fg oxocarbon.base13 :bg oxocarbon.none})
 (custom-set-face! :Type [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 (custom-set-face! :Typedef [] {:fg oxocarbon.base09 :bg oxocarbon.none})
+
 ;; treesitter
 ;;; misc
 
@@ -382,13 +340,11 @@
                   {:fg oxocarbon.base03 :bg oxocarbon.none})
 
 (custom-set-face! "@error" [] {:fg oxocarbon.base11 :bg oxocarbon.none})
-
 ;; @none
 ;; @preproc
 ;; @define
 
 (custom-set-face! "@operator" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
-
 ;;; punctuation
 
 (custom-set-face! "@puncuation.delimiter" []
@@ -407,11 +363,9 @@
 (custom-set-face! "@string.regex" [] {:fg oxocarbon.base07 :bg oxocarbon.none})
 
 (custom-set-face! "@string.escape" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;; @string.special
 
 (custom-set-face! "@character" [] {:fg oxocarbon.base14 :bg oxocarbon.none})
-
 ;; @character.special
 
 (custom-set-face! "@boolean" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
@@ -419,7 +373,6 @@
 (custom-set-face! "@number" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
 
 (custom-set-face! "@float" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;;; functions
 
 (custom-set-face! "@function" [:bold] {:fg oxocarbon.base12 :bg oxocarbon.none})
@@ -433,13 +386,11 @@
                   {:fg oxocarbon.base07 :bg oxocarbon.none})
 
 (custom-set-face! "@method" [] {:fg oxocarbon.base07 :bg oxocarbon.none})
-
 ;; @method.call
 
 (custom-set-face! "@constructor" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
 (custom-set-face! "@parameter" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
-
 ;;; keywords
 
 (custom-set-face! "@keyword" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
@@ -455,7 +406,6 @@
 (custom-set-face! "@conditional" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
 (custom-set-face! "@repeat" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
-
 ;; @debug
 
 (custom-set-face! "@label" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
@@ -463,13 +413,11 @@
 (custom-set-face! "@include" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
 (custom-set-face! "@exception" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;;; types
 
 (custom-set-face! "@type" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
 (custom-set-face! "@type.builtin" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
-
 ;; @type.defintion
 ;; @type.qualifier
 ;; @storageclass
@@ -480,7 +428,6 @@
 (custom-set-face! "@field" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 
 (custom-set-face! "@property" [] {:fg oxocarbon.base10 :bg oxocarbon.none})
-
 ;;; identifiers
 
 (custom-set-face! "@variable" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
@@ -499,7 +446,6 @@
 (custom-set-face! "@namespace" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 
 (custom-set-face! "@symbol" [:bold] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;;; text
 
 (custom-set-face! "@text" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
@@ -535,11 +481,9 @@
 ;;; tags
 
 (custom-set-face! "@tag" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
-
 ;; @tag.attribute
 
 (custom-set-face! "@tag.delimiter" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
-
 ;;; Conceal
 ;; @conceal
 ;;; Spell
@@ -564,6 +508,7 @@
 ;; @scope
 
 (custom-set-face! "@reference" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+
 ;; neovim
 
 (custom-set-face! :NvimInternalError []
@@ -574,6 +519,7 @@
 (custom-set-face! :NormalNC [] {:fg oxocarbon.base05 :bg oxocarbon.base00})
 (custom-set-face! :TermCursor [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
 (custom-set-face! :TermCursorNC [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
+
 ;; statusline/winbar
 
 (custom-set-face! :StatusReplace [] {:fg oxocarbon.base00 :bg oxocarbon.base08})
@@ -801,7 +747,6 @@
 (custom-set-face! :HydraPink [] {:fg oxocarbon.base14 :bg oxocarbon.none})
 
 (custom-set-face! :HydraHint [] {:fg oxocarbon.none :bg oxocarbon.blend})
-
 ;; alpha
 
 (custom-set-face! :alpha1 [] {:fg oxocarbon.base03 :bg oxocarbon.none})
@@ -809,11 +754,9 @@
 (custom-set-face! :alpha2 [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 
 (custom-set-face! :alpha3 [] {:fg oxocarbon.base03 :bg oxocarbon.none})
-
 ;; headlines.nvim
 
 (custom-set-face! :CodeBlock [] {:fg oxocarbon.none :bg oxocarbon.base01})
-
 ;; nvim-bufferline
 
 (custom-set-face! :BufferLineDiagnostic [:bold]

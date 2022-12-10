@@ -117,42 +117,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  if vim.g.colors_name then
  vim.cmd.hi("clear") else end vim.g["colors_name"] = "oxocarbon" vim.opt["termguicolors"] = true local base00 = "#161616" local base06 = "#ffffff" local base09 = "#78a9ff"
-
 
 
 
