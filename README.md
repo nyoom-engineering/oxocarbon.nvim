@@ -2,7 +2,7 @@
 
 **Note:** The old rust version can be found on the `rust` branch of this repository
 
-**Oxocarbon is looking for ports!** If you're a user of another editor or tool, join our discord to learn more about porting oxocarbon to other applications. https://discord.gg/5R5DvQs9
+**Oxocarbon is looking for ports!** If you're a user of another editor or tool, join our discord to learn more about porting oxocarbon to other applications. https://discord.gg/M528tDKXRG 
 
 A dark and light Neovim theme written in fennel, inspired by [IBM Carbon](https://carbondesignsystem.com/guidelines/color/overview/#themes). This is the reference implementation of the oxocarbon theme. 
 
