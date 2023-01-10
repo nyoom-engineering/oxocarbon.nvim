@@ -712,3 +712,5 @@
 
 (custom-set-face! :BufferLineDiagnosticVisible [:bold]
                   {:fg oxocarbon.base10 :bg oxocarbon.none})
+
+{ : oxocarbon }
