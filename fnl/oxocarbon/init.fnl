@@ -5,9 +5,9 @@
 ;;     :::::::::::   ::::::::  :   ::::::    :   :::       :   :         :
 ;;     `:::::::::'   `::::::' .'   `:::::   .'   `::.     .'   `.       .'
 ;;       `':::''       `'::'-'       `'::.-'       `':..-'       `-...-'
-;; 
+;;
 ;;   Colorscheme name:    oxocarbon themeing system
-;;   Description:         Neovim Colorschemes based on base16 in fennel made with (hs)luv <3 
+;;   Description:         Neovim Colorschemes based on base16 in fennel made with (hs)luv <3
 ;;   Author:              https://github.com/shaunsingh
 
 (local {: blend-hex} (require :oxocarbon.colorutils))
@@ -49,7 +49,7 @@
 (let! colors_name :oxocarbon)
 (set! termguicolors)
 
-;; oxocarbon palette 
+;; oxocarbon palette
 
 (local base00 "#161616")
 (local base06 "#ffffff")
@@ -93,7 +93,7 @@
                       :blend "#FAFAFA"
                       :none :NONE}))
 
-;; terminal 
+;; terminal
 
 (let! terminal_color_0 oxocarbon.base01)
 (let! terminal_color_1 oxocarbon.base11)
@@ -466,6 +466,10 @@
 (custom-set-face! :TermCursor [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
 (custom-set-face! :TermCursorNC [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
 ;; statusline/winbar
+
+(custom-set-face! :StatusLine [] {:fg oxocarbon.base04 :bg oxocarbon.base00})
+
+(custom-set-face! :StatusLineNC [] {:fg oxocarbon.base04 :bg oxocarbon.base01})
 
 (custom-set-face! :StatusReplace [] {:fg oxocarbon.base00 :bg oxocarbon.base08})
 
