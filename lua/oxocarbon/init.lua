@@ -179,6 +179,8 @@ vim.api.nvim_set_hl(0, "FloatBorder", {fg = oxocarbon.blend, bg = oxocarbon.blen
 vim.api.nvim_set_hl(0, "NormalNC", {fg = oxocarbon.base05, bg = oxocarbon.base00})
 vim.api.nvim_set_hl(0, "TermCursor", {fg = oxocarbon.base00, bg = oxocarbon.base04})
 vim.api.nvim_set_hl(0, "TermCursorNC", {fg = oxocarbon.base00, bg = oxocarbon.base04})
+vim.api.nvim_set_hl(0, "StatusLine", {fg = oxocarbon.base04, bg = oxocarbon.base00})
+vim.api.nvim_set_hl(0, "StatusLineNC", {fg = oxocarbon.base04, bg = oxocarbon.base01})
 vim.api.nvim_set_hl(0, "StatusReplace", {fg = oxocarbon.base00, bg = oxocarbon.base08})
 vim.api.nvim_set_hl(0, "StatusInsert", {fg = oxocarbon.base00, bg = oxocarbon.base12})
 vim.api.nvim_set_hl(0, "StatusVisual", {fg = oxocarbon.base00, bg = oxocarbon.base14})
