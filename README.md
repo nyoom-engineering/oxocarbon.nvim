@@ -1,7 +1,7 @@
 ## Note 
 
 this was written in rust mainly for fun, but also because I would like to use some rust libraries and play around with it in the future. 
-If you don't want to install rust and/or don't want to compile a colorscheme, use the fennel version: https://github.com/shaunsingh/oxocarbon.nvim/tree/fennel. 
+If you don't want to install rust and/or don't want to compile a colorscheme, use the fennel version: https://github.com/shaunsingh/oxocarbon.nvim/. 
 
 # oxocarbon.nvim
 
