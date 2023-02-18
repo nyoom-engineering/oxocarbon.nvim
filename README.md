@@ -68,6 +68,17 @@ vim.cmd("colorscheme oxocarbon")
 For nyoom.nvim users:
 Nyoom comes bundled with a version of oxocarbon. Enable the `ui.nyoom` module
 
+## Development
+
+You must install [hotpot](https://github.com/rktjmp/hotpot.nvim), since is what is used for compiling the fennel code.
+
+### Workflow
+
+* Fork the project
+* Make changes in the files under `fnl/`
+* Compile your changes by running `:Fnlfile make.fnl`
+* Make a PR
+
 ## License
 
 The project is licensed under the MIT license
