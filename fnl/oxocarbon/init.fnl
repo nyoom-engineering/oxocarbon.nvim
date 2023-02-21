@@ -359,7 +359,7 @@
 
 (custom-set-face! "@type" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
-(custom-set-face! "@type.builtin" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+(custom-set-face! "@type.builtin" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
 ;; @type.defintion
 ;; @type.qualifier
@@ -387,7 +387,7 @@
 (custom-set-face! "@constant.macro" []
                   {:fg oxocarbon.base07 :bg oxocarbon.none})
 
-(custom-set-face! "@namespace" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+(custom-set-face! "@namespace" [] {:fg oxocarbon.base07 :bg oxocarbon.none})
 
 (custom-set-face! "@symbol" [:bold] {:fg oxocarbon.base15 :bg oxocarbon.none})
 
