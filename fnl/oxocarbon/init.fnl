@@ -425,10 +425,9 @@
 ;; @text.diff.delete
 ;;; tags
 
-(custom-set-face! "@tag" [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+(custom-set-face! "@tag" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 
-;; @tag.attribute
-
+(custom-set-face! "@tag.attribute" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
 (custom-set-face! "@tag.delimiter" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
 
 ;;; Conceal
