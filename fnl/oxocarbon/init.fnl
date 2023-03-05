@@ -564,4 +564,18 @@
 (custom-set-face! :BufferLineDiagnosticVisible [:bold]
                   {:fg oxocarbon.base10 :bg oxocarbon.none})
 
+
+;; vimwiki/vimwiki
+
+(custom-set-face! :VimwikiHeader1 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeader2 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeader3 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeader4 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeader5 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeader6 [] {:link "markdownH1"})
+(custom-set-face! :VimwikiHeaderChar [] {:link "markdownH1"})
+(custom-set-face! :VimwikiList [] {:link "markdownListMarker"})
+(custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
+(custom-set-face! :VimwikiCode [] {:link "markdownCode"})
+
 { : oxocarbon }
