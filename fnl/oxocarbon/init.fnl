@@ -282,6 +282,16 @@
 (custom-set-face! :markdownOrderedListMarker []
                   {:fg oxocarbon.base08 :bg oxocarbon.none})
 
+;; asciidoc
+
+(custom-set-face! :asciidocAttributeEntry [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! :asciidocAttributeList [] {:link "asciidocAttributeEntry"})
+(custom-set-face! :asciidocAttributeRef [] {:link "asciidocAttributeEntry"})
+(custom-set-face! :asciidocHLabel [] {:link "markdownH1"})
+(custom-set-face! :asciidocOneLineTitle [] {:link "markdownH1"})
+(custom-set-face! :asciidocQuotedMonospaced [] {:link "markdownBlockquote"})
+(custom-set-face! :asciidocURL [] {:link "markdownUrl"})
+
 ;; treesitter
 ;;; misc
 
