@@ -574,6 +574,12 @@
 (custom-set-face! :BufferLineDiagnosticVisible [:bold]
                   {:fg oxocarbon.base10 :bg oxocarbon.none})
 
+;; preservim/vim-markdown
+
+(custom-set-face! :htmlH1 [] {:link "markdownH1"})
+(custom-set-face! :mkdRule [] {:link "markdownRule"})
+(custom-set-face! :mkdListItem [] {:link "markdownListMarker"})
+(custom-set-face! :mkdListItemCheckbox [] {:link "markdownListMarker"})
 
 ;; vimwiki/vimwiki
 
