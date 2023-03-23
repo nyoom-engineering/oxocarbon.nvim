@@ -180,7 +180,7 @@
 (custom-set-face! :ModeMsg [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 (custom-set-face! :MoreMsg [] {:fg oxocarbon.base08 :bg oxocarbon.none})
 (custom-set-face! :Question [] {:fg oxocarbon.base04 :bg oxocarbon.none})
-(custom-set-face! :Substitute [] {:fg oxocarbon.base04 :bg oxocarbon.none})
+(custom-set-face! :Substitute [] {:fg oxocarbon.base01 :bg oxocarbon.base08})
 (custom-set-face! :WarningMsg [] {:fg oxocarbon.base13 :bg oxocarbon.none})
 (custom-set-face! :WildMenu [] {:fg oxocarbon.base08 :bg oxocarbon.base01})
 
