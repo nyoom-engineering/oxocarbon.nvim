@@ -210,9 +210,9 @@
 
 ;; tabs
 
-(custom-set-face! :TabLine [] {:fg oxocarbon.base04 :bg oxocarbon.base01})
-(custom-set-face! :TabLineFill [] {:fg oxocarbon.base04 :bg oxocarbon.base01})
-(custom-set-face! :TabLineSel [] {:fg oxocarbon.base08 :bg oxocarbon.base03})
+(custom-set-face! :TabLine [] {:link "StatusLineNC"})
+(custom-set-face! :TabLineFill [] {:link "TabLine"})
+(custom-set-face! :TabLineSel [] {:link "StatusLine"})
 
 ;; window
 
