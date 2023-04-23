@@ -227,6 +227,7 @@ vim.api.nvim_set_hl(0, "TelescopePromptTitle", {fg = oxocarbon.base02, bg = oxoc
 vim.api.nvim_set_hl(0, "TelescopeResultsTitle", {fg = oxocarbon.blend, bg = oxocarbon.blend})
 vim.api.nvim_set_hl(0, "TelescopeSelection", {fg = oxocarbon.none, bg = oxocarbon.base02})
 vim.api.nvim_set_hl(0, "TelescopePreviewLine", {fg = oxocarbon.none, bg = oxocarbon.base01})
+vim.api.nvim_set_hl(0, "TelescopeMatching", {fg = oxocarbon.base08, bg = oxocarbon.none, italic = true, bold = true})
 vim.api.nvim_set_hl(0, "NotifyERRORBorder", {fg = oxocarbon.base08, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "NotifyWARNBorder", {fg = oxocarbon.base15, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "NotifyINFOBorder", {fg = oxocarbon.base05, bg = oxocarbon.none})
