@@ -59,7 +59,7 @@
                           {: base00
                            :base01 (blend-hex base00 base06 0.085)
                            :base02 (blend-hex base00 base06 0.18)
-                           :base03 (blend-hex base00 base06 0.3)
+                           :base03 (blend-hex base00 base06 0.42)
                            :base04 (blend-hex base00 base06 0.82)
                            :base05 (blend-hex base00 base06 0.95)
                            : base06
@@ -612,4 +612,4 @@
 (custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
 (custom-set-face! :VimwikiCode [] {:link "markdownCode"})
 
-{ : oxocarbon }
+{ : oxocarbon}
