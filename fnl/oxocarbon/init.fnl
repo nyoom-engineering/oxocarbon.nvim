@@ -638,9 +638,9 @@
 ;; (custom-set-face! :NavicIconsObject [] {})
 ;; (custom-set-face! :NavicIconsKey [] {})
 ;; (custom-set-face! :NavicIconsNull [] {})
-;; (custom-set-face! :NavicText [] {})
+(custom-set-face! :NavicText [] {:fg oxocarbon.base04 :bg oxocarbon.none})
 ;; (custom-set-face! :NavicSeperator [] {})
 ;; (custom-set-face! :NavicIconsPackage [] {})
-;; (custom-set-face! :NavicIconsEvent [] {})
+(custom-set-face! :NavicIconsEvent [] {:fg oxocarbon.base12 :bg oxocarbon.none})
 
 { : oxocarbon }
