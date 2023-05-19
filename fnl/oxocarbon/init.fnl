@@ -612,6 +612,8 @@
 (custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
 (custom-set-face! :VimwikiCode [] {:link "markdownCode"})
 
+;; nvim-navic
+
 (custom-set-face! :NavicIconsFile [] {:fg oxocarbon.base14 :bg oxocarbon.none })
 (custom-set-face! :NavicIconsModule [] {:fg oxocarbon.base11 :bg oxocarbon.none })
 (custom-set-face! :NavicIconsNamespace [] {:fg oxocarbon.base07 :bg oxocarbon.none })
@@ -632,13 +634,13 @@
 (custom-set-face! :NavicIconsStruct [] {:fg oxocarbon.base11})
 (custom-set-face! :NavicIconsOperator [] {:fg oxocarbon.base11 :bg oxocarbon.none})
 (custom-set-face! :NavicIconsTypeParameter [] {:fg oxocarbon.base04 :bg oxocarbon.none})
-(custom-set-face! :NavicIconsArray [] {})
-(custom-set-face! :NavicIconsObject [] {})
-(custom-set-face! :NavicIconsKey [] {})
-(custom-set-face! :NavicIconsNull [] {})
-(custom-set-face! :NavicText [] {})
-(custom-set-face! :NavicSeperator [] {})
-(custom-set-face! :NavicIconsPackage [] {})
-(custom-set-face! :NavicIconsEvent [] {})
+;; (custom-set-face! :NavicIconsArray [] {})
+;; (custom-set-face! :NavicIconsObject [] {})
+;; (custom-set-face! :NavicIconsKey [] {})
+;; (custom-set-face! :NavicIconsNull [] {})
+;; (custom-set-face! :NavicText [] {})
+;; (custom-set-face! :NavicSeperator [] {})
+;; (custom-set-face! :NavicIconsPackage [] {})
+;; (custom-set-face! :NavicIconsEvent [] {})
 
 { : oxocarbon }
