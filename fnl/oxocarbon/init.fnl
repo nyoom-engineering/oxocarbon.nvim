@@ -323,7 +323,7 @@
 
 ;;; punctuation
 
-(custom-set-face! "@puncuation.delimiter" [] {:fg oxocarbon.base08 :bg oxocarbon.none})
+(custom-set-face! "@punctuation.delimiter" [] {:fg oxocarbon.base08 :bg oxocarbon.none})
 (custom-set-face! "@punctuation.bracket" [] {:fg oxocarbon.base08 :bg oxocarbon.none})
 (custom-set-face! "@punctuation.special" [] {:fg oxocarbon.base08 :bg oxocarbon.none})
 
