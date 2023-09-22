@@ -74,6 +74,12 @@ vim.opt.background = "dark" -- set this to dark or light
 vim.cmd("colorscheme oxocarbon")
 ```
 
+You can also add a transparent background by adding the following lines after `colorscheme`:
+```lua
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+```
+
 For nyoom.nvim users:
 Nyoom comes bundled with a version of oxocarbon. Enable the `ui.nyoom` module
 
