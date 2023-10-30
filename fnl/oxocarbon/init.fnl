@@ -175,6 +175,7 @@
 
 ;; lsp
 
+(custom-set-face! :LspCodeLens [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceText [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceread [] {:fg oxocarbon.none :bg oxocarbon.base03})
 (custom-set-face! :LspReferenceWrite [] {:fg oxocarbon.none :bg oxocarbon.base03})

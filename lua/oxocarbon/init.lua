@@ -70,6 +70,7 @@ vim.api.nvim_set_hl(0, "@number.interval", {fg = oxocarbon.base09, bg = oxocarbo
 vim.api.nvim_set_hl(0, "@number.status", {fg = oxocarbon.base12, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "@number.quantity", {fg = oxocarbon.base11, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "@number.quantity.negative", {fg = oxocarbon.base10, bg = oxocarbon.none})
+vim.api.nvim_set_hl(0, "LspCodeLens", {fg = oxocarbon.none, bg = oxocarbon.base03})
 vim.api.nvim_set_hl(0, "LspReferenceText", {fg = oxocarbon.none, bg = oxocarbon.base03})
 vim.api.nvim_set_hl(0, "LspReferenceread", {fg = oxocarbon.none, bg = oxocarbon.base03})
 vim.api.nvim_set_hl(0, "LspReferenceWrite", {fg = oxocarbon.none, bg = oxocarbon.base03})
