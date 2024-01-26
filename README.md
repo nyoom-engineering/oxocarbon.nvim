@@ -50,13 +50,13 @@ use {'nyoom-engineering/oxocarbon.nvim'}
 ```
 ### Lazy.nvim
 ```lua
-return { 
+return {
   "nyoom-engineering/oxocarbon.nvim"
   -- Add in any other configuration; 
   --   event = foo, 
   --   config = bar
   --   end,
-}, 
+}
 ```
 ### Usage
 
