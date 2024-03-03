@@ -78,6 +78,7 @@ You can also add a transparent background by adding the following lines after `c
 ```lua
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 ```
 
 For nyoom.nvim users:
