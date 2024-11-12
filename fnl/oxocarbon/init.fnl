@@ -488,6 +488,7 @@
 (custom-set-face! "@tag" [] {:fg oxocarbon.base09 :bg oxocarbon.none})
 (custom-set-face! "@tag.attribute" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
 (custom-set-face! "@tag.delimiter" [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! "@tag.builtin.tsx" [] {:link "@tag.tsx"})
 
 ;;; Conceal
 ;; @conceal
