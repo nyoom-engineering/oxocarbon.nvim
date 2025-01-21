@@ -10,7 +10,7 @@ local base00 = "#161616"
 local base06 = "#ffffff"
 local base09 = "#78a9ff"
 local oxocarbon = (((vim.o.background == "dark") and {base00 = base00, base01 = blend_hex(base00, base06, 0.085), base02 = blend_hex(base00, base06, 0.18), base03 = blend_hex(base00, base06, 0.3), base04 = blend_hex(base00, base06, 0.82), base05 = blend_hex(base00, base06, 0.95), base06 = base06, base07 = "#08bdba", base08 = "#3ddbd9", base09 = base09, base10 = "#ee5396", base11 = "#33b1ff", base12 = "#ff7eb6", base13 = "#42be65", base14 = "#be95ff", base15 = "#82cfff", blend = "#131313", none = "NONE"}) or {base00 = base06, base01 = blend_hex(base00, base06, 0.95), base02 = blend_hex(base00, base06, 0.82), base03 = base00, base04 = "#37474F", base05 = "#90A4AE", base06 = "#525252", base07 = "#08bdba", base08 = "#ff7eb6", base09 = "#ee5396", base10 = "#FF6F00", base11 = "#0f62fe", base12 = "#673AB7", base13 = "#42be65", base14 = "#be95ff", base15 = "#FFAB91", blend = "#FAFAFA", none = "NONE"})
-do end (vim.g)["terminal_color_0"] = oxocarbon.base01
+vim.g["terminal_color_0"] = oxocarbon.base01
 vim.g["terminal_color_1"] = oxocarbon.base11
 vim.g["terminal_color_2"] = oxocarbon.base14
 vim.g["terminal_color_3"] = oxocarbon.base13
@@ -336,6 +336,34 @@ vim.api.nvim_set_hl(0, "CmpItemKindFile", {fg = oxocarbon.base01, bg = oxocarbon
 vim.api.nvim_set_hl(0, "CmpItemKindMethod", {fg = oxocarbon.base01, bg = oxocarbon.base15})
 vim.api.nvim_set_hl(0, "CmpItemKindValue", {fg = oxocarbon.base01, bg = oxocarbon.base15})
 vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", {fg = oxocarbon.base01, bg = oxocarbon.base15})
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", {link = "Pmenu"})
+vim.api.nvim_set_hl(0, "BlinkCmpLabel", {fg = oxocarbon.base04, bg = oxocarbon.base01})
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {fg = oxocarbon.base04, bg = oxocarbon.base01})
+vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", {fg = oxocarbon.base05, bg = oxocarbon.none, bold = true})
+vim.api.nvim_set_hl(0, "BlinkCmpKind", {fg = oxocarbon.base01, bg = oxocarbon.base09})
+vim.api.nvim_set_hl(0, "BlinkCmpKindText", {fg = oxocarbon.base01, bg = oxocarbon.base09})
+vim.api.nvim_set_hl(0, "BlinkCmpKindEnum", {fg = oxocarbon.base01, bg = oxocarbon.base09})
+vim.api.nvim_set_hl(0, "BlinkCmpKindKeyword", {fg = oxocarbon.base01, bg = oxocarbon.base09})
+vim.api.nvim_set_hl(0, "BlinkCmpKindConstant", {fg = oxocarbon.base01, bg = oxocarbon.base10})
+vim.api.nvim_set_hl(0, "BlinkCmpKindConstructor", {fg = oxocarbon.base01, bg = oxocarbon.base10})
+vim.api.nvim_set_hl(0, "BlinkCmpKindReference", {fg = oxocarbon.base01, bg = oxocarbon.base10})
+vim.api.nvim_set_hl(0, "BlinkCmpKindFunction", {fg = oxocarbon.base01, bg = oxocarbon.base11})
+vim.api.nvim_set_hl(0, "BlinkCmpKindStruct", {fg = oxocarbon.base01, bg = oxocarbon.base11})
+vim.api.nvim_set_hl(0, "BlinkCmpKindClass", {fg = oxocarbon.base01, bg = oxocarbon.base11})
+vim.api.nvim_set_hl(0, "BlinkCmpKindModule", {fg = oxocarbon.base01, bg = oxocarbon.base11})
+vim.api.nvim_set_hl(0, "BlinkCmpKindOperator", {fg = oxocarbon.base01, bg = oxocarbon.base11})
+vim.api.nvim_set_hl(0, "BlinkCmpKindField", {fg = oxocarbon.base01, bg = oxocarbon.base12})
+vim.api.nvim_set_hl(0, "BlinkCmpKindProperty", {fg = oxocarbon.base01, bg = oxocarbon.base14})
+vim.api.nvim_set_hl(0, "BlinkCmpKindEvent", {fg = oxocarbon.base01, bg = oxocarbon.base12})
+vim.api.nvim_set_hl(0, "BlinkCmpKindUnit", {fg = oxocarbon.base01, bg = oxocarbon.base13})
+vim.api.nvim_set_hl(0, "BlinkCmpKindSnippet", {fg = oxocarbon.base01, bg = oxocarbon.base13})
+vim.api.nvim_set_hl(0, "BlinkCmpKindFolder", {fg = oxocarbon.base01, bg = oxocarbon.base13})
+vim.api.nvim_set_hl(0, "BlinkCmpKindVariable", {fg = oxocarbon.base01, bg = oxocarbon.base14})
+vim.api.nvim_set_hl(0, "BlinkCmpKindFile", {fg = oxocarbon.base01, bg = oxocarbon.base14})
+vim.api.nvim_set_hl(0, "BlinkCmpKindMethod", {fg = oxocarbon.base01, bg = oxocarbon.base15})
+vim.api.nvim_set_hl(0, "BlinkCmpKindValue", {fg = oxocarbon.base01, bg = oxocarbon.base15})
+vim.api.nvim_set_hl(0, "BlinkCmpKindEnumMember", {fg = oxocarbon.base01, bg = oxocarbon.base15})
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", {link = "Pmenu"})
 vim.api.nvim_set_hl(0, "NvimTreeImageFile", {fg = oxocarbon.base12, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", {fg = oxocarbon.base12, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", {fg = oxocarbon.base00, bg = oxocarbon.base00})
