@@ -656,6 +656,9 @@
 (custom-set-face! :NeogitHunkHeader [] {:fg oxocarbon.base04 :bg oxocarbon.base02})
 (custom-set-face! :NeogitHunkHeaderHighlight [] {:fg oxocarbon.base04 :bg oxocarbon.base03})
 
+;; gitsigns
+(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment" })
+
 ;; hydra
 
 (custom-set-face! :HydraRed [] {:fg oxocarbon.base12 :bg oxocarbon.none})

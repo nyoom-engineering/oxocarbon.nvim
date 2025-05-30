@@ -377,6 +377,7 @@ vim.api.nvim_set_hl(0, "NeogitBranch", {fg = oxocarbon.base10, bg = oxocarbon.no
 vim.api.nvim_set_hl(0, "NeogitRemote", {fg = oxocarbon.base09, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "NeogitHunkHeader", {fg = oxocarbon.base04, bg = oxocarbon.base02})
 vim.api.nvim_set_hl(0, "NeogitHunkHeaderHighlight", {fg = oxocarbon.base04, bg = oxocarbon.base03})
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {link = "Comment"})
 vim.api.nvim_set_hl(0, "HydraRed", {fg = oxocarbon.base12, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "HydraBlue", {fg = oxocarbon.base09, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "HydraAmaranth", {fg = oxocarbon.base10, bg = oxocarbon.none})
