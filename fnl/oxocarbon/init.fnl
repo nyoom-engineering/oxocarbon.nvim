@@ -184,6 +184,7 @@
 ;; lps-semantic-tokens
 (custom-set-face! "@lsp.type.class" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.decorator" [] {:link "Decorator"})
+(custom-set-face! "@lsp.type.decorator.markdown" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.function" [] {:link "@function"})
 (custom-set-face! "@lsp.type.macro" [] {:link "Macro"})
 (custom-set-face! "@lsp.type.method" [] {:link "@function"})
@@ -386,20 +387,20 @@
 (custom-set-face! "@markup.link.description" [] {:fg oxocarbon.base11 :underline true :italic true})
 
 (custom-set-face! "@markup.list" [] {:link "markdownListMarker"})
-(custom-set-face! "@markup.list.bullet" [] {:link :markdownListMarker})
+(custom-set-face! "@markup.list.bullet" [] {:link "markdownListMarker"})
 (custom-set-face! "@markup.list.checked" [] {:link "markdownListMarker"})
 (custom-set-face! "@markup.list.markdown" [] {:link "markdownListMarker"})
-(custom-set-face! "@markup.list.ordered" [] {:link :markdownOrderedListMarker})
+(custom-set-face! "@markup.list.ordered" [] {:link "markdownOrderedListMarker"})
 (custom-set-face! "@markup.list.unchecked" [] {:link "markdownListMarker"})
 
 (custom-set-face! "@markup.math" [] {:link "Special"})
 (custom-set-face! "@markup.raw" [] {:link "String"})
 (custom-set-face! "@markup.raw.markdown_inline" [] {:link "String"})
-(custom-set-face! "@markup.quote" [] {:link :markdownBlockquote})
+(custom-set-face! "@markup.quote" [] {:link "markdownBlockquote"})
 
-(custom-set-face! "@markup.literal" [] {:link :markdownCode})
-(custom-set-face! "@markup.code.block" [] {:link :markdownCodeBlock})
-(custom-set-face! "@markup.rule" [] {:link :Comment})
+(custom-set-face! "@markup.literal" [] {:link "markdownCode"})
+(custom-set-face! "@markup.code.block" [] {:link "markdownCodeBlock"})
+(custom-set-face! "@markup.rule" [] {:link "Comment"})
 
 ;; asciidoc
 

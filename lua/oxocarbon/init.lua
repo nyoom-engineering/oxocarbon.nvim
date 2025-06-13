@@ -77,6 +77,7 @@ vim.api.nvim_set_hl(0, "LspReferenceWrite", {fg = oxocarbon.none, bg = oxocarbon
 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", {fg = oxocarbon.base08, bg = oxocarbon.none})
 vim.api.nvim_set_hl(0, "@lsp.type.class", {link = "Structure"})
 vim.api.nvim_set_hl(0, "@lsp.type.decorator", {link = "Decorator"})
+vim.api.nvim_set_hl(0, "@lsp.type.decorator.markdown", {link = "Structure"})
 vim.api.nvim_set_hl(0, "@lsp.type.function", {link = "@function"})
 vim.api.nvim_set_hl(0, "@lsp.type.macro", {link = "Macro"})
 vim.api.nvim_set_hl(0, "@lsp.type.method", {link = "@function"})
