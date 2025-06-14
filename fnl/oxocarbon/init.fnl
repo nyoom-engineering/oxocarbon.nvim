@@ -381,10 +381,11 @@
 (custom-set-face! "@markup.link" [] {:link "markdownUrl"})
 (custom-set-face! "@markup.link.label" [] {:underline true})
 (custom-set-face! "@markup.link.label.symbol" [] {:link "markdownItalic"})
+(custom-set-face! "@markup.link.label.markdown_inline" [] {:link "markdownItalic"})
 (custom-set-face! "@markup.link.title" [] {:link "Title"})
 (custom-set-face! "@markup.link.url" [] {:link "markdownUrl"})
 (custom-set-face! "@markup.link.destination" [] {:link "markdownUrl"})
-(custom-set-face! "@markup.link.description" [] {:fg oxocarbon.base11 :underline true :italic true})
+(custom-set-face! "@markup.link.description" [] {:fg oxocarbon.blend :underline true :italic true})
 
 (custom-set-face! "@markup.list" [] {:link "markdownListMarker"})
 (custom-set-face! "@markup.list.bullet" [] {:link "markdownListMarker"})
