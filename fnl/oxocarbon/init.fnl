@@ -705,4 +705,17 @@
 (custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
 (custom-set-face! :VimwikiCode [] {:link "markdownCode"})
 
+;; mini
+
+(custom-set-face! :MiniStatuslineModeNormal [] {:link "StatusNormal"})
+(custom-set-face! :MiniStatuslineModeInsert [] {:link "StatusInsert"})
+(custom-set-face! :MiniStatuslineModeVisual [] {:link "StatusVisual"})
+(custom-set-face! :MiniStatuslineModeReplace [] {:link "StatusReplace"})
+(custom-set-face! :MiniStatuslineModeCommand [] {:link "StatusCommand"})
+(custom-set-face! :MiniStatuslineModeOther [] {:link "StatusTerminal"})
+(custom-set-face! :MiniStatuslineDevinfo [] {:link "Normal"})
+(custom-set-face! :MiniStatuslineFilename [] {:link "Normal"})
+(custom-set-face! :MiniStatuslineFileinfo [] {:link "Normal"})
+(custom-set-face! :MiniStatuslineInactive [] {:link "StatusLineNC"})
+
 { : oxocarbon }
