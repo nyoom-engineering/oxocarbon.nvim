@@ -184,6 +184,7 @@
 ;; lps-semantic-tokens
 (custom-set-face! "@lsp.type.class" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.decorator" [] {:link "Decorator"})
+(custom-set-face! "@lsp.type.decorator.markdown" [] {:link "Structure"})
 (custom-set-face! "@lsp.type.function" [] {:link "@function"})
 (custom-set-face! "@lsp.type.macro" [] {:link "Macro"})
 (custom-set-face! "@lsp.type.method" [] {:link "@function"})
@@ -355,6 +356,52 @@
                   {:fg oxocarbon.base08 :bg oxocarbon.none})
 (custom-set-face! :markdownOrderedListMarker []
                   {:fg oxocarbon.base08 :bg oxocarbon.none})
+
+; markdown treesitter
+(custom-set-face! "@markup" [] {:link "@none"})
+(custom-set-face! "@markup.environment" [] {:link "Macro"})
+(custom-set-face! "@markup.environment.name" [] {:link "Type"})
+(custom-set-face! "@markup.emphasis" [] {:italic true})
+(custom-set-face! "@markup.italic" [] {:italic true})
+(custom-set-face! "@markup.strikethrough" [] {:strikethrough true})
+(custom-set-face! "@markup.strong" [] {:bold true})
+(custom-set-face! "@markup.underline" [] {:underline true})
+
+(custom-set-face! "@markup.heading" [] {:link "Title"})
+(custom-set-face! "@markup.heading.marker" [] {:link :markdownHeadingDelimiter})
+(custom-set-face! "@markup.heading.1.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.2.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.3.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.4.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.5.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.6.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.7.markdown" [] {:link "markdownH1"})
+(custom-set-face! "@markup.heading.8.markdown" [] {:link "markdownH1"})
+
+(custom-set-face! "@markup.link" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.label" [] {:underline true})
+(custom-set-face! "@markup.link.label.symbol" [] {:link "markdownItalic"})
+(custom-set-face! "@markup.link.label.markdown_inline" [] {:link "markdownItalic"})
+(custom-set-face! "@markup.link.title" [] {:link "Title"})
+(custom-set-face! "@markup.link.url" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.destination" [] {:link "markdownUrl"})
+(custom-set-face! "@markup.link.description" [] {:fg oxocarbon.blend :underline true :italic true})
+
+(custom-set-face! "@markup.list" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.bullet" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.checked" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.markdown" [] {:link "markdownListMarker"})
+(custom-set-face! "@markup.list.ordered" [] {:link "markdownOrderedListMarker"})
+(custom-set-face! "@markup.list.unchecked" [] {:link "markdownListMarker"})
+
+(custom-set-face! "@markup.math" [] {:link "Special"})
+(custom-set-face! "@markup.raw" [] {:link "String"})
+(custom-set-face! "@markup.raw.markdown_inline" [] {:link "String"})
+(custom-set-face! "@markup.quote" [] {:link "markdownBlockquote"})
+
+(custom-set-face! "@markup.literal" [] {:link "markdownCode"})
+(custom-set-face! "@markup.code.block" [] {:link "markdownCodeBlock"})
+(custom-set-face! "@markup.rule" [] {:link "Comment"})
 
 ;; asciidoc
 
