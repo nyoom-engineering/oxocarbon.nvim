@@ -720,4 +720,8 @@
 (custom-set-face! :VimwikiLink [] {:link "markdownUrl"})
 (custom-set-face! :VimwikiCode [] {:link "markdownCode"})
 
+;; flash
+
+(custom-set-face! :FlashLabel [:bold] {:fg oxocarbon.base05 :bg oxocarbon.base00})
+
 { : oxocarbon }
