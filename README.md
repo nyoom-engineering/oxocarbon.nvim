@@ -36,6 +36,7 @@ The colorscheme explicitly adds highlights for the following plugins:
 - Neogit
 - Gitsigns
 - Hydra
+- Flash
 
 And many others should "just work!" If you have a plugin that needs explicit highlights, feel free to open an issue or PR and I would be happy to add them.  
 
