@@ -309,7 +309,7 @@ vim.api.nvim_set_hl(0, "@reference", {fg = oxocarbon.base04, bg = oxocarbon.none
 vim.api.nvim_set_hl(0, "NvimInternalError", {fg = oxocarbon.base00, bg = oxocarbon.base08})
 vim.api.nvim_set_hl(0, "NormalFloat", {fg = oxocarbon.base05, bg = oxocarbon.blend})
 vim.api.nvim_set_hl(0, "FloatBorder", {fg = oxocarbon.blend, bg = oxocarbon.blend})
-vim.api.nvim_set_hl(0, "NormalNC", {fg = oxocarbon.base05, bg = oxocarbon.base00})
+vim.api.nvim_set_hl(0, "NormalNC", {fg = oxocarbon.base04, bg = oxocarbon.base00})
 vim.api.nvim_set_hl(0, "TermCursor", {fg = oxocarbon.base00, bg = oxocarbon.base04})
 vim.api.nvim_set_hl(0, "TermCursorNC", {fg = oxocarbon.base00, bg = oxocarbon.base04})
 vim.api.nvim_set_hl(0, "StatusLine", {fg = oxocarbon.base04, bg = oxocarbon.base00})

@@ -567,7 +567,7 @@
 (custom-set-face! :NvimInternalError [] {:fg oxocarbon.base00 :bg oxocarbon.base08})
 (custom-set-face! :NormalFloat [] {:fg oxocarbon.base05 :bg oxocarbon.blend})
 (custom-set-face! :FloatBorder [] {:fg oxocarbon.blend :bg oxocarbon.blend})
-(custom-set-face! :NormalNC [] {:fg oxocarbon.base05 :bg oxocarbon.base00})
+(custom-set-face! :NormalNC [] {:fg oxocarbon.base04 :bg oxocarbon.base00})
 (custom-set-face! :TermCursor [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
 (custom-set-face! :TermCursorNC [] {:fg oxocarbon.base00 :bg oxocarbon.base04})
 
