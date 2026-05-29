@@ -726,15 +726,15 @@
 
 ;; csv/tsv support
 
-(custom-set-face! :csvCol0 [] { :fg "#878d96" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol1 [] { :fg "#a8a8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol2 [] { :fg "#8d8d8d" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol3 [] { :fg "#a2a9b0" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol4 [] { :fg "#8f8b8b" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol5 [] { :fg "#ada8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol6 [] { :fg "#878d96" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol7 [] { :fg "#a8a8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-(custom-set-face! :csvCol8 [] { :fg "#8d8d8d" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol0 [] { :fg "#878d96" :bg :NONE})
+(custom-set-face! :csvCol1 [] { :fg "#a8a8a8" :bg :NONE})
+(custom-set-face! :csvCol2 [] { :fg "#8d8d8d" :bg :NONE})
+(custom-set-face! :csvCol3 [] { :fg "#a2a9b0" :bg :NONE})
+(custom-set-face! :csvCol4 [] { :fg "#8f8b8b" :bg :NONE})
+(custom-set-face! :csvCol5 [] { :fg "#ada8a8" :bg :NONE})
+(custom-set-face! :csvCol6 [] { :fg "#878d96" :bg :NONE})
+(custom-set-face! :csvCol7 [] { :fg "#a8a8a8" :bg :NONE})
+(custom-set-face! :csvCol8 [] { :fg "#8d8d8d" :bg :NONE})
 
 (custom-set-face! :RainbowDelimitersRed [] {:link "csvCol0"})
 (custom-set-face! :RainbowDelimitersYellow [] {:link "csvCol1"})
