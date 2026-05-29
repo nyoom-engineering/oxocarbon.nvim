@@ -212,7 +212,7 @@
 (custom-set-face! "@lsp.type.string.rust" [] {:link "@string"})
 (custom-set-face! "@lsp.type.typeAlias" [] {:link "@type.definition"})
 (custom-set-face! "@lsp.type.unresolvedReference" [] {:link "Error"})
-(custom-set-face! "@lsp.type.variable" [] {:link "@variable"} )
+(custom-set-face! "@lsp.type.variable" [] {:link "@variable"})
 (custom-set-face! "@lsp.mod.readonly" [] {:link "@constant"})
 (custom-set-face! "@lsp.mod.typeHint" [] {:link "Type"})
 (custom-set-face! "@lsp.mod.builtin" [] {:link "Special"})
@@ -280,6 +280,7 @@
 
 (custom-set-face! :IncSearch [] {:fg oxocarbon.base06 :bg oxocarbon.base10})
 (custom-set-face! :Search [] {:fg oxocarbon.base01 :bg oxocarbon.base08})
+(custom-set-face! :CursorSearch [] {:fg oxocarbon.base01 :bg oxocarbon.base11})
 
 ;; tabs
 
@@ -672,7 +673,7 @@
 (custom-set-face! :NeogitHunkHeaderHighlight [] {:fg oxocarbon.base04 :bg oxocarbon.base03})
 
 ;; gitsigns
-(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment" })
+(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment"})
 
 ;; hydra
 
@@ -724,4 +725,4 @@
 
 (custom-set-face! :FlashLabel [:bold] {:fg oxocarbon.base05 :bg oxocarbon.base00})
 
-{ : oxocarbon }
+{ : oxocarbon}
