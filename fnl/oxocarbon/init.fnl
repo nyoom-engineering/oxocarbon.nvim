@@ -212,7 +212,7 @@
 (custom-set-face! "@lsp.type.string.rust" [] {:link "@string"})
 (custom-set-face! "@lsp.type.typeAlias" [] {:link "@type.definition"})
 (custom-set-face! "@lsp.type.unresolvedReference" [] {:link "Error"})
-(custom-set-face! "@lsp.type.variable" [] {:link "@variable"} )
+(custom-set-face! "@lsp.type.variable" [] {:link "@variable"})
 (custom-set-face! "@lsp.mod.readonly" [] {:link "@constant"})
 (custom-set-face! "@lsp.mod.typeHint" [] {:link "Type"})
 (custom-set-face! "@lsp.mod.builtin" [] {:link "Special"})
@@ -672,7 +672,7 @@
 (custom-set-face! :NeogitHunkHeaderHighlight [] {:fg oxocarbon.base04 :bg oxocarbon.base03})
 
 ;; gitsigns
-(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment" })
+(custom-set-face! :GitSignsCurrentLineBlame [] {:link "Comment"})
 
 ;; hydra
 
@@ -724,4 +724,24 @@
 
 (custom-set-face! :FlashLabel [:bold] {:fg oxocarbon.base05 :bg oxocarbon.base00})
 
-{ : oxocarbon }
+;; csv/tsv support
+
+(custom-set-face! :csvCol0 [] { :fg "#878d96" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol1 [] { :fg "#a8a8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol2 [] { :fg "#8d8d8d" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol3 [] { :fg "#a2a9b0" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol4 [] { :fg "#8f8b8b" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol5 [] { :fg "#ada8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol6 [] { :fg "#878d96" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol7 [] { :fg "#a8a8a8" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+(custom-set-face! :csvCol8 [] { :fg "#8d8d8d" :bg :NONE})    ;; For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+
+(custom-set-face! :RainbowDelimitersRed [] {:link "csvCol0"})
+(custom-set-face! :RainbowDelimitersYellow [] {:link "csvCol1"})
+(custom-set-face! :RainbowDelimitersBlue [] {:link "csvCol2"})
+(custom-set-face! :RainbowDelimitersOrange [] {:link "csvCol3"})
+(custom-set-face! :RainbowDelimitersGreen [] {:link "csvCol4"})
+(custom-set-face! :RainbowDelimitersViolet [] {:link "csvCol5"})
+(custom-set-face! :RainbowDelimitersCyan [] {:link "csvCol6"})
+
+{ : oxocarbon}
