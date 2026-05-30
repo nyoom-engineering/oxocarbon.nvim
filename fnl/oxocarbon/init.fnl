@@ -745,4 +745,12 @@
 (custom-set-face! :RainbowDelimitersViolet [] {:link "csvCol5"})
 (custom-set-face! :RainbowDelimitersCyan [] {:link "csvCol6"})
 
+;; snacks
+
+(custom-set-face! :SnacksTitle [] {:link "TelescopePromptTitle"})
+(custom-set-face! :SnacksPickerPreviewTitle [] {:link "TelescopePreviewTitle"})
+(custom-set-face! :SnacksPickerPrompt [] {:link "TelescopePromptPrefix"})
+(custom-set-face! :SnacksPickerInput [] {:link "NormalFloat"})
+(custom-set-face! :SnacksPickerMatch [] {:link "TelescopeMatching"})
+
 { : oxocarbon}
