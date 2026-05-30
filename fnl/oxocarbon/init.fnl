@@ -280,6 +280,7 @@
 
 (custom-set-face! :IncSearch [] {:fg oxocarbon.base06 :bg oxocarbon.base10})
 (custom-set-face! :Search [] {:fg oxocarbon.base01 :bg oxocarbon.base08})
+(custom-set-face! :CurSearch [] {:fg oxocarbon.base01 :bg oxocarbon.base11})
 
 ;; tabs
 
