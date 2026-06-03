@@ -725,4 +725,24 @@
 
 (custom-set-face! :FlashLabel [:bold] {:fg oxocarbon.base05 :bg oxocarbon.base00})
 
+;; csv/tsv support
+
+(custom-set-face! :csvCol0 [] { :fg "#878d96" :bg :NONE})
+(custom-set-face! :csvCol1 [] { :fg "#a8a8a8" :bg :NONE})
+(custom-set-face! :csvCol2 [] { :fg "#8d8d8d" :bg :NONE})
+(custom-set-face! :csvCol3 [] { :fg "#a2a9b0" :bg :NONE})
+(custom-set-face! :csvCol4 [] { :fg "#8f8b8b" :bg :NONE})
+(custom-set-face! :csvCol5 [] { :fg "#ada8a8" :bg :NONE})
+(custom-set-face! :csvCol6 [] { :fg "#878d96" :bg :NONE})
+(custom-set-face! :csvCol7 [] { :fg "#a8a8a8" :bg :NONE})
+(custom-set-face! :csvCol8 [] { :fg "#8d8d8d" :bg :NONE})
+
+(custom-set-face! :RainbowDelimitersRed [] {:link "csvCol0"})
+(custom-set-face! :RainbowDelimitersYellow [] {:link "csvCol1"})
+(custom-set-face! :RainbowDelimitersBlue [] {:link "csvCol2"})
+(custom-set-face! :RainbowDelimitersOrange [] {:link "csvCol3"})
+(custom-set-face! :RainbowDelimitersGreen [] {:link "csvCol4"})
+(custom-set-face! :RainbowDelimitersViolet [] {:link "csvCol5"})
+(custom-set-face! :RainbowDelimitersCyan [] {:link "csvCol6"})
+
 { : oxocarbon}
