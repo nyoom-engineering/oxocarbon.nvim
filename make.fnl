@@ -23,7 +23,7 @@
 
 ;;; Build options
 ;; Contributors may wanna change this depending on where they have `fennel` installed on their system.
-(local fennel-install "fennel")
+(local fennel-install "/usr/bin/fennel")
 (when (not (file-exists? fennel-install))
   (print "[ERROR] Cannot find fennel installation! Check path of fennel-install variable!")
   (os.exit 1))

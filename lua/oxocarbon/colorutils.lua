@@ -154,7 +154,7 @@ local function hex__3ergb(hex)
     local char2 = string.sub(hex0, ((i * 2) + 3), ((i * 2) + 3))
     local digit1 = (string.find(hex_chars, char1) - 1)
     local digit2 = (string.find(hex_chars, char2) - 1)
-    do end (ret)[(i + 1)] = (((digit1 * 16) + digit2) / 255)
+    ret[(i + 1)] = (((digit1 * 16) + digit2) / 255)
   end
   return ret
 end
@@ -291,7 +291,7 @@ local function rotate_hex(c, n)
 end
 local function gradient(c1, c2)
   local ls = {}
-  for i = 0, 1.01, 0.02 do
+  for i = 0.0, 1.01, 0.02 do
     ls = vim.list_extend(ls, {i})
   end
   local function _18_(_241)
@@ -324,7 +324,7 @@ local function generate_pallete()
   local base16_names = {"base00", "base01", "base02", "base03", "base04", "base05", "base06", "base07", "base08", "base09", "base0A", "base0B", "base0C", "base0D", "base0E", "base0F"}
   local base16_palette = {}
   for i, hex in ipairs(palette) do
-    local name = (base16_names)[i]
+    local name = base16_names[i]
     base16_palette[name] = hex
   end
   return base16_palette
