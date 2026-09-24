@@ -704,6 +704,44 @@
 (custom-set-face! :BlinkCmpKindValue [] {:fg oxocarbon.base01 :bg oxocarbon.base15})
 (custom-set-face! :BlinkCmpKindEnumMember [] {:fg oxocarbon.base01 :bg oxocarbon.base15})
 
+;; navic
+
+(custom-set-face! :NavicSeparator [] {:fg oxocarbon.base03 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsFile [] {:fg oxocarbon.base14 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsModule [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsNamespace [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsPackage [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsClass [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsInterface [] {:fg oxocarbon.base08 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsStruct [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsMethod [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsFunction [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsConstructor [] {:fg oxocarbon.base10 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsVariable [] {:fg oxocarbon.base14 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsField [] {:fg oxocarbon.base12 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsProperty [] {:fg oxocarbon.base12 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsEnum [] {:fg oxocarbon.base09 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsEnumMember [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsConstant [] {:fg oxocarbon.base10 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsString [] {:fg oxocarbon.base09 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsNumber [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsBoolean [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsNull [] {:fg oxocarbon.base15 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsKey [] {:fg oxocarbon.base09 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsArray [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsObject [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+
+(custom-set-face! :NavicIconsEvent [] {:fg oxocarbon.base12 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsOperator [] {:fg oxocarbon.base11 :bg oxocarbon.none})
+(custom-set-face! :NavicIconsTypeParameter [] {:fg oxocarbon.base08 :bg oxocarbon.none})
 
 ;; nvimtree
 
