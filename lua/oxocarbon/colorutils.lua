@@ -291,7 +291,7 @@ local function rotate_hex(c, n)
 end
 local function gradient(c1, c2)
   local ls = {}
-  for i = 0, 1.01, 0.02 do
+  for i = 0.0, 1.01, 0.02 do
     ls = vim.list_extend(ls, {i})
   end
   local function _18_(_241)
