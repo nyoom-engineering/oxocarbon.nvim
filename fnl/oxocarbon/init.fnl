@@ -95,22 +95,26 @@
 
 ;; terminal
 
-(let! terminal_color_0 oxocarbon.base01)
-(let! terminal_color_1 oxocarbon.base11)
-(let! terminal_color_2 oxocarbon.base14)
-(let! terminal_color_3 oxocarbon.base13)
-(let! terminal_color_4 oxocarbon.base09)
-(let! terminal_color_5 oxocarbon.base15)
-(let! terminal_color_6 oxocarbon.base08)
-(let! terminal_color_7 oxocarbon.base05)
-(let! terminal_color_8 oxocarbon.base03)
-(let! terminal_color_9 oxocarbon.base11)
-(let! terminal_color_10 oxocarbon.base14)
-(let! terminal_color_11 oxocarbon.base13)
-(let! terminal_color_12 oxocarbon.base09)
-(let! terminal_color_13 oxocarbon.base15)
-(let! terminal_color_14 oxocarbon.base07)
-(let! terminal_color_15 oxocarbon.base06)
+(local dark (= vim.o.background :dark))
+;; Neither palette has yellow; use Carbon Yellow 30/60 for terminal ANSI yellow.
+(local yellow (if dark "#f1c21b" "#8e6a00"))
+
+(let! terminal_color_0 (if dark oxocarbon.base01 oxocarbon.base03))
+(let! terminal_color_1 (if dark oxocarbon.base10 oxocarbon.base09))
+(let! terminal_color_2 oxocarbon.base13)
+(let! terminal_color_3 yellow)
+(let! terminal_color_4 (if dark oxocarbon.base09 oxocarbon.base11))
+(let! terminal_color_5 (if dark oxocarbon.base14 oxocarbon.base12))
+(let! terminal_color_6 oxocarbon.base07)
+(let! terminal_color_7 (if dark oxocarbon.base05 oxocarbon.base02))
+(let! terminal_color_8 (if dark oxocarbon.base03 oxocarbon.base06))
+(let! terminal_color_9 (if dark oxocarbon.base12 oxocarbon.base08))
+(let! terminal_color_10 oxocarbon.base13)
+(let! terminal_color_11 yellow)
+(let! terminal_color_12 oxocarbon.base11)
+(let! terminal_color_13 oxocarbon.base14)
+(let! terminal_color_14 (if dark oxocarbon.base08 oxocarbon.base07))
+(let! terminal_color_15 (if dark oxocarbon.base06 oxocarbon.base00))
 
 ;; editor
 

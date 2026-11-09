@@ -89,6 +89,20 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 ```
 
+### Terminal colors
+
+The 16 ANSI terminal colors follow black, red, green, yellow, blue, magenta,
+cyan, and white in both background modes. Oxocarbon's `base*` names are not
+standard Base16 slots, and some hues use different slots in dark and light mode.
+Red uses the theme's pinks; bright variants reuse a hue when the palette has no
+lighter equivalent. Neither palette contains yellow, so terminal yellow uses
+[IBM Carbon](https://www.ibm.com/design/language/color/) Yellow 30 (`#f1c21b`)
+in dark mode and Yellow 60 (`#8e6a00`) in light mode, without changing editor
+highlight colors.
+
+Neovim reads these colors when a terminal opens. Open a new terminal after
+applying the colorscheme to use its palette.
+
 ## Development
 
 You'll need a POSIX-compliant system as well as [`fennel`](https://fennel-lang.org).
